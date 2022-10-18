@@ -7,7 +7,7 @@ public class MultiThreadPoint {
         Runnable r = new Runnable() {
             @Override
             public void run() {
-                for (int i = 1; i <= 100; i++) {
+                for (int i = 1; i <= 5; i++) {
                     System.out.println(Thread.currentThread().getName() + " " + i);
                 }
             }
@@ -15,7 +15,7 @@ public class MultiThreadPoint {
 
         //Runnable using Lamda
         Runnable r1 = () -> {
-            for (int i = 1; i <= 100; i++) {
+            for (int i = 1; i <= 5; i++) {
                 System.out.println(Thread.currentThread().getName() + " " + i);
             }
         };
@@ -27,6 +27,14 @@ public class MultiThreadPoint {
         t1.start();
         t2.start();
         t3.start();
+
+        //More ways of achieving this.
+        //Thread 1 - 1
+        //Thread 2 - 1
+        //Thread 3 - 1
+        //Thread 1 - 2
+        //Thread 2 - 2
+        //Thread 3 - 2
     }
 
 }
